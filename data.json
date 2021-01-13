@@ -1,0 +1,9 @@
+{
+    "DATA" : [
+        {
+            "PASSWORD" : "pw123",
+            "ATTEMPTS_LEFT" : "4",
+            "PERMA_LOCKED" : "False"
+        }
+    ] 
+}

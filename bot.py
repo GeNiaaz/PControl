@@ -1,15 +1,17 @@
 import os
 import keyboard
+import json
 import logging
 import time
 from telegram.ext import Updater, ConversationHandler, CommandHandler, MessageHandler, Filters
 
 # Bot API token and password here
 TOKEN = ""
-PASSWORD = "pw123"
-ATTEMPTS_LEFT = 4
-PERMA_LOCKED = False
 Password = range(1)
+
+# JSON init
+file = open('data.json')
+data = json.load(file)
 
 # lock so someone who accidentally discovered this bot wouldn't screw with u
 LOCK_STATUS = True
