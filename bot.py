@@ -6,7 +6,7 @@ import time
 from telegram.ext import Updater, ConversationHandler, CommandHandler, MessageHandler, Filters
 
 # Bot API token and password here
-TOKEN = ""
+TOKEN = "1515402417:AAFyxj3pruXCOqF5zUsFgeyc15CBrGmXSWA"
 Password = range(1)
 
 # JSON init
@@ -32,6 +32,9 @@ def start (update, context):
     context.bot.send_message(
         chat_id=update.message.chat_id, text=str, parse_mode='Markdown')
 
+def save_json (data, file):
+    with open()
+
 
 # Security
 def unlock (update, context):
@@ -53,7 +56,8 @@ def locked_permanently (update, context):
 
 def password (update,context): 
     if update.message.text == PASSWORD:
-        LOCK_STATUS = False
+        data["LOCK_STATUS"] = False
+
         str = "PControl has been unlocked, enjoy :)"
         context.bot.send_message(
             chat_id=update.message.chat_id, text=str, parse_mode='Markdown')
@@ -86,7 +90,7 @@ def invalid (update, context):
             chat_id=update.message.chat_id, text=str, parse_mode='Markdown')
 
 def shutdown (update, context):
-    if LOCK_STATUS:
+    if data["LOCK_STATUS"]:
         str = "PControl is locked, type /unlock to unlock the bot"
         context.bot.send_message(
             chat_id=update.message.chat_id, text=str, parse_mode='Markdown')
@@ -97,7 +101,7 @@ def shutdown (update, context):
         os.system("shutdown /s /t 1")
 
 def sleep (update, context):
-    if LOCK_STATUS:
+    if data["LOCK_STATUS"]:
         str = "PControl is locked, type /unlock to unlock the bot"
         context.bot.send_message(
             chat_id=update.message.chat_id, text=str, parse_mode='Markdown')
@@ -108,7 +112,7 @@ def sleep (update, context):
         os.system("rundll32.exe powrprof.dll,SetSuspendState 0,1,0")
 
 def play (update, context):
-    if LOCK_STATUS:
+    if data["LOCK_STATUS"]:
         str = "PControl is locked, type /unlock to unlock the bot"
         context.bot.send_message(
             chat_id=update.message.chat_id, text=str, parse_mode='Markdown')
@@ -119,7 +123,7 @@ def play (update, context):
         keyboard.send("play/pause media")
 
 def next (update, context):
-    if LOCK_STATUS:
+    if data["LOCK_STATUS"]:
         str = "PControl is locked, type /unlock to unlock the bot"
         context.bot.send_message(
             chat_id=update.message.chat_id, text=str, parse_mode='Markdown')
@@ -130,7 +134,7 @@ def next (update, context):
         keyboard.send("next track")
 
 def previous (update, context):
-    if LOCK_STATUS:
+    if data["LOCK_STATUS"]:
         str = "PControl is locked, type /unlock to unlock the bot"
         context.bot.send_message(
             chat_id=update.message.chat_id, text=str, parse_mode='Markdown')
@@ -141,7 +145,7 @@ def previous (update, context):
         keyboard.send("previous track")
 
 def louder (update, context):
-    if LOCK_STATUS:
+    if data["LOCK_STATUS"]:
         str = "PControl is locked, type /unlock to unlock the bot"
         context.bot.send_message(
             chat_id=update.message.chat_id, text=str, parse_mode='Markdown')
@@ -152,7 +156,7 @@ def louder (update, context):
         keyboard.send("volume up")
 
 def softer (update, context):
-    if LOCK_STATUS:
+    if data["LOCK_STATUS"]:
         str = "PControl is locked, type /unlock to unlock the bot"
         context.bot.send_message(
             chat_id=update.message.chat_id, text=str, parse_mode='Markdown')
@@ -163,14 +167,14 @@ def softer (update, context):
         keyboard.send("volume down")
 
 
-
 def main():
     # Create updater and pass in Bot's API token.       
     updater = Updater(TOKEN, use_context=True)
     # Get dispatcher to register handlers
     dispatcher = updater.dispatcher
 
-    if PERMA_LOCKED:
+
+    if data["PERMA_LOCKED"]:
          locked_permanently
     else: 
         # answer commands
