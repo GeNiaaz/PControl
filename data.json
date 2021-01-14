@@ -1,6 +1,1 @@
-{
-    "PASSWORD" : "pw123",
-    "ATTEMPTS_LEFT" : "4",
-    "PERMA_LOCKED" : "False",
-    "LOCKED PERMANENTLY" : "False"
-}
+{"PASSWORD": "", "TOKEN": "", "ATTEMPTS_LEFT": "4", "LOCK_STATUS": "1", "PERMA_LOCKED": "0", "ATTEMPTS": "5"}
